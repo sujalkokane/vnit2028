@@ -75,6 +75,7 @@ links.forEach((link) => {
                     `;
           tableBody.appendChild(row);
         });
+        table.style.display = "block";
         break;
       default:
         console.log("No action defined for this branch.");
