@@ -78,7 +78,7 @@ links.forEach((link) => {
       if (action === "all") {
         num -= 1; // Adjust for all students
       }
-      let bgStyle = student.NO === 1 ? "background-color: gold;" : "";
+      let bgStyle = num === 1 ? "background-color: gold;" : "";
       row.innerHTML = `
                   <td style="${bgStyle}">${num}</td>
                   <td style="${bgStyle}">${student.NAME}</td>
