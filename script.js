@@ -46,6 +46,11 @@ links.forEach((link) => {
         selected.innerHTML = action;
         response = await fetch("https://vnit2028-backend.vercel.app/api/min");
         break;
+        case "min":
+        // logic for All
+        selected.innerHTML = action;
+        response = await fetch("https://vnit2028-backend.vercel.app/api/all");
+        break;
       default:
         console.log("No action defined for this branch.");
     }
