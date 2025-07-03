@@ -61,21 +61,6 @@ links.forEach((link) => {
         selected.innerHTML = action;
         toggle = true;
         response = await fetch("https://vnit2028-backend.vercel.app/api/all");
-        let data = await response.json();
-        tableBody.innerHTML = "";
-        data.forEach((student) => {
-          let row = document.createElement("tr");
-          row.innerHTML = `
-                      <td>${student.NO - 1}</td>
-                      <td>${student.NAME}</td>
-                      <td>${student.ENROLLMENT_NO}</td>
-                      <td>${student.CHEM_SEM}</td>
-                      <td>${student.PHY_SEM}</td>
-                      <td>${student.CGPA}</td>
-                    `;
-          tableBody.appendChild(row);
-        });
-        table.style.display = "block";
         break;
       default:
         console.log("No action defined for this branch.");
@@ -89,16 +74,47 @@ links.forEach((link) => {
     tableBody.innerHTML = "";
     data.forEach((student) => {
       let row = document.createElement("tr");
+      let num = student.NO;
+      if (action === "all") {
+        num -= 1; // Adjust for all students
+      }
+      let bgStyle = student.NO === 1 ? "background-color: gold;" : "";
       row.innerHTML = `
-                  <td>${student.NO}</td>
-                  <td>${student.NAME}</td>
-                  <td>${student.ENROLLMENT_NO}</td>
-                  <td>${student.CHEM_SEM}</td>
-                  <td>${student.PHY_SEM}</td>
-                  <td>${student.CGPA}</td>
+                  <td style="${bgStyle}">${student.NO}</td>
+                  <td style="${bgStyle}">${student.NAME}</td>
+                  <td style="${bgStyle}">${student.ENROLLMENT_NO}</td>
+                  <td style="${bgStyle}">${student.CHEM_SEM}</td>
+                  <td style="${bgStyle}">${student.PHY_SEM}</td>
+                  <td style="${bgStyle}">${student.CGPA}</td>
                 `;
       tableBody.appendChild(row);
     });
     table.style.display = "block";
   });
+});
+let searchInput = document.querySelector("#search-input");
+
+searchInput.addEventListener("input", () => {
+  let filter = searchInput.value.toLowerCase();
+  let rows = tableBody.getElementsByTagName("tr");
+
+  for (let i = 0; i < rows.length; i++) {
+    let cells = rows[i].getElementsByTagName("td");
+    let match = false;
+
+    // Check each cell for the search value
+    for (let j = 0; j < cells.length; j++) {
+      let cellValue = cells[j].textContent || cells[j].innerText;
+      if (cellValue.toLowerCase().indexOf(filter) > -1) {
+        match = true;
+        break;
+      }
+    }
+
+    if (match) {
+      rows[i].style.display = "";
+    } else {
+      rows[i].style.display = "none";
+    }
+  }
 });
