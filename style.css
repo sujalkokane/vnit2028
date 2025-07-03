@@ -79,3 +79,50 @@ tr:hover {
 tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .toggle-btn {
+    width: 80%;
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+
+  .selected {
+    font-size: 2rem;
+    padding: 10px;
+  }
+
+  table {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle-btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .selected {
+    font-size: 1.5rem;
+  }
+
+  table {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}
