@@ -8,16 +8,13 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f6f9;
-  padding-top: 60px; /* Adjusted for fixed header height */
+  padding-top: 100px; /* Adjusted for fixed header height */
 }
 
 /* Header Styles */
 header {
   background: linear-gradient(90deg, #3f51b5, #5c6bc0);
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  overflow-x: auto;
+  padding: 10px 0;
   position: fixed;
   top: 0;
   width: 100%;
@@ -25,7 +22,14 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-header::-webkit-scrollbar {
+/* Button Container */
+.button-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 10px 5px 10px;
+}
+
+.button-container::-webkit-scrollbar {
   display: none;
 }
 
@@ -60,8 +64,9 @@ header::-webkit-scrollbar {
 .search-container {
   width: 100%;
   max-width: 600px;
-  margin: 15px auto 0 auto;
-  padding: 0 10px;
+  margin: 5px auto 0 auto;
+  padding: 0 10px 10px 10px;
+  box-sizing: border-box;
 }
 
 #search-input {
