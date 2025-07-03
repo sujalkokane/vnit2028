@@ -83,7 +83,9 @@ header {
 
 /* Table Styles */
 table {
-  width: 80%;
+  width: 100%; /* full width for responsiveness */
+  min-width: 400px; /* ensures readability on very small screens */
+  max-width: 800px;
   margin: 20px auto;
   border-collapse: collapse;
   font-family: Arial, Helvetica, sans-serif;
@@ -119,7 +121,7 @@ tbody tr:nth-child(even) {
   }
 
   table {
-    width: 90%;
+    font-size: 0.95rem;
   }
 }
 
@@ -143,8 +145,7 @@ tbody tr:nth-child(even) {
   }
 
   table {
-    width: 95%;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -168,7 +169,6 @@ tbody tr:nth-child(even) {
   }
 
   table {
-    width: 100%;
     font-size: 0.85rem;
   }
 
