@@ -1,3 +1,4 @@
+/* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +8,7 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f6f9;
-  padding-top: 80px; /* Adjusted for fixed header height */
+  padding-top: 70px; /* Adjusted for fixed header height */
 }
 
 /* Header Styles */
@@ -23,6 +24,16 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
+  overflow-x: auto; /* enable horizontal scroll on mobile */
+}
+
+/* Hide scrollbar for header scroll (optional) */
+header::-webkit-scrollbar {
+  display: none;
+}
+header {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
 }
 
 /* Toggle Buttons */
@@ -38,7 +49,7 @@ header {
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
-  word-break: break-word;
+  white-space: nowrap; /* prevent text wrapping */
 }
 
 .toggle-btn:hover {
@@ -114,15 +125,16 @@ tbody tr:nth-child(even) {
 
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     padding: 10px;
   }
 
   .toggle-btn {
-    width: 90%;
-    margin: 5px 0;
+    flex: 0 0 auto;
+    margin: 5px 8px;
     font-size: 1rem;
-    padding: 10px;
+    padding: 10px 16px;
   }
 
   .selected {
@@ -137,10 +149,17 @@ tbody tr:nth-child(even) {
 }
 
 @media (max-width: 480px) {
+  header {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 8px;
+  }
+
   .toggle-btn {
-    width: 100%;
+    flex: 0 0 auto;
     font-size: 0.9rem;
-    padding: 10px 5px;
+    padding: 8px 12px;
+    margin: 5px 5px;
   }
 
   .selected {
