@@ -80,7 +80,7 @@ links.forEach((link) => {
       }
       let bgStyle = student.NO === 1 ? "background-color: gold;" : "";
       row.innerHTML = `
-                  <td style="${bgStyle}">${student.NO}</td>
+                  <td style="${bgStyle}">${num}</td>
                   <td style="${bgStyle}">${student.NAME}</td>
                   <td style="${bgStyle}">${student.ENROLLMENT_NO}</td>
                   <td style="${bgStyle}">${student.CHEM_SEM}</td>
