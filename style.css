@@ -79,6 +79,8 @@ tr:hover {
 tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+/* Base styles remain same as yours */
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -90,6 +92,10 @@ tbody tr:nth-child(even) {
     width: 100%;
     margin: 5px 0;
     font-size: 1rem;
+    white-space: normal; /* allow text to wrap */
+    overflow-wrap: break-word; /* break long words */
+    text-align: center;
+    padding: 10px 5px;
   }
 
   .selected {
@@ -115,10 +121,17 @@ tbody tr:nth-child(even) {
 }
 
 @media (max-width: 480px) {
+  header {
+    padding: 8px;
+  }
+
   .toggle-btn {
     width: 100%;
-    font-size: 0.9rem;
-    padding: 10px;
+    font-size: 0.85rem;
+    padding: 10px 5px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-align: center;
   }
 
   .selected {
