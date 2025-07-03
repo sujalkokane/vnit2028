@@ -26,6 +26,25 @@ header {
   z-index: 1000;
   overflow-x: auto; /* enable horizontal scroll on mobile */
 }
+.msg-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 20%;
+  font-weight: 100;
+}
+.msg {
+  background-color: beige;
+  width: 400px;
+  height: 15rem;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 10px;
+}
 
 /* Hide scrollbar for header scroll (optional) */
 header::-webkit-scrollbar {
@@ -33,7 +52,7 @@ header::-webkit-scrollbar {
 }
 header {
   -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none;    /* Firefox */
+  scrollbar-width: none; /* Firefox */
 }
 
 /* Toggle Buttons */
@@ -96,7 +115,8 @@ thead {
   color: white;
 }
 
-th, td {
+th,
+td {
   padding: 12px 15px;
   text-align: center;
   border-bottom: 1px solid #ddd;
@@ -146,7 +166,8 @@ tbody tr:nth-child(even) {
     font-size: 0.9rem;
   }
 
-  th, td {
+  th,
+  td {
     padding: 10px;
   }
 }
@@ -174,7 +195,8 @@ tbody tr:nth-child(even) {
     font-size: 0.85rem;
   }
 
-  th, td {
+  th,
+  td {
     padding: 8px;
   }
 }
