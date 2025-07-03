@@ -82,11 +82,12 @@ tbody tr:nth-child(even) {
 @media (max-width: 768px) {
   header {
     flex-direction: column;
+    align-items: stretch;
     padding: 10px;
   }
 
   .toggle-btn {
-    width: 80%;
+    width: 100%;
     margin: 5px 0;
     font-size: 1rem;
   }
@@ -96,13 +97,20 @@ tbody tr:nth-child(even) {
     padding: 10px;
   }
 
+  .table {
+    overflow-x: auto;
+    display: block;
+    margin-top: 120px;
+  }
+
   table {
-    width: 90%;
+    width: 100%;
     font-size: 0.9rem;
   }
 
   th, td {
     padding: 10px;
+    word-wrap: break-word;
   }
 }
 
@@ -117,6 +125,12 @@ tbody tr:nth-child(even) {
     font-size: 1.5rem;
   }
 
+  .table {
+    overflow-x: auto;
+    display: block;
+    margin-top: 120px;
+  }
+
   table {
     width: 100%;
     font-size: 0.8rem;
@@ -124,5 +138,6 @@ tbody tr:nth-child(even) {
 
   th, td {
     padding: 8px;
+    word-wrap: break-word;
   }
 }
