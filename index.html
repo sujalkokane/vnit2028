@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>VNIT 2028</title>
+  </head>
+  <body>
+    <header class="links">
+      <button class="toggle-btn" data-action="cse">CSE</button>
+      <button class="toggle-btn" data-action="ece">ECE</button>
+      <button class="toggle-btn" data-action="eee">EEE</button>
+      <button class="toggle-btn" data-action="mec">MECH</button>
+      <button class="toggle-btn" data-action="chem">CHEM</button>
+      <button class="toggle-btn" data-action="civil">CIVIL</button>
+      <button class="toggle-btn" data-action="meta">META</button>
+      <button class="toggle-btn" data-action="min">MIN</button>
+      <button class="toggle-btn" data-action="all">All Branches</button>
+    </header>
+    <div class="table">
+      <h2 class="selected"></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Enrollment No</th>
+            <th>1st Sem</th>
+            <th>2nd Sem</th>
+            <th>CGPA</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
